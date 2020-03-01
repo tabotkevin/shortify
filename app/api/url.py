@@ -16,18 +16,14 @@ def shorten_url():
 
     short_url = ''
     long_url = request.json.get('long_url')
-    print('checking cache')
     cached_short_url = client.get_short_url(long_url, g.user.id)
     if cached_short_url:
-        print('found cache')
         short_url = cached_short_url
     else:
-        print('Using the database no cache found')
         url = Url(long=long_url, user=g.user)
         db.session.add(url)
         db.session.commit()
         short_url = b62_encode(url.id)
-        print('short_url is :', short_url)
         url.short = short_url
 
         
