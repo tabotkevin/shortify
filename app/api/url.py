@@ -7,15 +7,15 @@ from ..utils import b62_encode, b62_decode
 from ..clients import RedisClient
 
 
-DOMAIN_NAME = "https://lin.ks"
+DOMAIN_NAME = "https://jit.lc"
 client = RedisClient()
 
-@api.route('/create_short_url', methods=['POST'])
+@api.route('/shorten', methods=['POST'])
 @auth_token.login_required
 def shorten_url():
 
     short_url = ''
-    long_url = request.json.get('long_url')
+    long_url = request.json.get('url')
     cached_short_url = client.get_short_url(long_url, g.user.id)
     if cached_short_url:
         short_url = cached_short_url
