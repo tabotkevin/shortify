@@ -61,8 +61,6 @@ How do I get set up
 Proof
 ----------------------------
 ![proof](proof/1.png)
-![proof](proof/2.png)
-![proof](proof/3.png)
 
 
 Who do I talk to
