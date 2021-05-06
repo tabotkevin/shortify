@@ -1,5 +1,5 @@
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-HTTPAuth==2.2.1
 Flask-Limit==1.0.2
 Flask-Migrate==2.5.2
